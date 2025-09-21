@@ -19,22 +19,32 @@ def main():
     up1, up2, up3, up4, down = gameplay()
 
     #Display the results. input all the decks, return the total score.
-    total_points = results(up1, up2, up3, up4, down)
+    game_points, total_money = results(up1, up2, up3, up4, down)
 
     #Calculate the winnings based upon the total points. Each point is $10. $320 is the cost to play so each point more than 32 is $10 winnings.
-    money = (total_points - 32) * 10
+    money = (game_points - 32) * 10
 
     #Print the results to the player
     print()
     print("----------------------------------------")
-    if total_points >= 32:
+    if game_points >= 32:
         print(f"Good Game! You made ${money:.2f} this game.")
+        if total_money >= 0:
+            print(f"All time, you have made ${total_money}")
+        else:
+            total_money = total_money * -1
+            print(f"All time, you have lost ${total_money}")
     else:
         negative_money = money * -1
         print(f"Better luck next time. You lost ${negative_money:.2f} this game.")
+        if total_money >= 0:
+            print(f"All time, you have made ${total_money}")
+        else:
+            total_money = total_money * -1
+            print(f"All time, you have lost ${total_money}")
 
 
-
+ 
 #Run the main function
 if __name__ == "__main__":
     main()
