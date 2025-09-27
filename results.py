@@ -6,7 +6,8 @@ def results(up1, up2, up3, up4, down):
     Each card placed will be 1 point so the maximum total score is 52.
     This function will also edit the scores.csv file to add this game to all historical games.
     Inputs include the relevant piles (the ups and the down).
-    Output includes the game_points from this game and the total money made over time (including this game).
+    Output includes the game_points from this game, the total money made over time (including this game),
+    and the number of games that have been played all time.
     '''
 
     #Import libraries
@@ -37,7 +38,7 @@ def results(up1, up2, up3, up4, down):
     #Calculate the all time total average score
     #Set the score and counter to 0 so the average historical score can be calculated.
     scores = 0
-    counter = 0
+    games = 0
 
     #Read the file
     with open("scores.csv", newline='') as file:
@@ -46,17 +47,20 @@ def results(up1, up2, up3, up4, down):
         #Loop through rows of data imported
         for row in reader:
             #Update the counter
-            counter = counter + 1
+            games = games + 1
             #Save each historical score and add it to the scores total
             row_score = int(row["score"])
             scores = scores + row_score #This will effectively find the total money made
 
     #Calculate the total money made / lost over time.
-    total_money = round((scores - counter * 32) * 10, ndigits=1)
+    total_money = round((scores - games * 32) * 10, ndigits=1)
+
+    #Calculate the total number of games played
+    total_games = games
     
 
     #Return the total points from this game and the scores total found in the scores.csv
-    return game_points, total_money
+    return game_points, total_money, total_games
 
 
 
