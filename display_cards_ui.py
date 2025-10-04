@@ -1,7 +1,7 @@
 #This is a remake of the function display_cards. This second version will use tkinter library to create a better user interface
 #Additionally, rather than no outputs returned, this function will return the user decision variable
 
-
+ 
 
 
 def display_cards(hand, up1, up2, up3, up4, down, sixes, drawn_cards):
@@ -21,11 +21,6 @@ def display_cards(hand, up1, up2, up3, up4, down, sixes, drawn_cards):
     #Create an instance of the application
     user_interface = Application(hand, up1, up2, up3, up4, down, sixes, drawn_cards)
     user_interface.mainloop()
-
-    #Save the decicion variable within this function
-    decision = user_interface.user_decision()
-    print(f"The user decision is: {decision}")
-
 
     #Return the user decision
     # return decision
@@ -63,6 +58,7 @@ down = ['empty', 6, 5, 4, 3, 2, 'A', 6, 5] #This is the center 6 and down pile
 sixes = [6, 6] #The sixes pile off to the side
 drawn_cards = [7, 9, 'Q'] #These are the cards drawn and kept from the deck each turn
 
-decision = display_cards(hand, up1, up2, up3, up4, down, sixes, drawn_cards)
+# decision = display_cards(hand, up1, up2, up3, up4, down, sixes, drawn_cards)
+display_cards(hand, up1, up2, up3, up4, down, sixes, drawn_cards)
 
-print(f"This given user decision is: {decision}")
+# print(f"This given user decision is: {decision}")

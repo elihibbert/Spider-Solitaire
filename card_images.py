@@ -9,52 +9,53 @@ def card_images(card):
     '''
 
     #Import the needed libraries
+    import customtkinter
     from PIL import Image, ImageTk
 
     #Import the image associated with each card
     if card == 'A':
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/AH.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/AH.png"), size=(40, 80))
     elif card == 2:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/2H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/2H.png"), size=(40, 80))
     elif card == 3:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/3H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/3H.png"), size=(40, 80))
     elif card == 4:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/4H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/4H.png"), size=(40, 80))
     elif card == 5:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/5H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/5H.png"), size=(40, 80))
     elif card == 6:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/6H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/6H.png"), size=(40, 80))
     elif card == 7:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/7H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/7H.png"), size=(40, 80))
     elif card == 8:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/8H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/8H.png"), size=(40, 80))
     elif card == 9:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/9H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/9H.png"), size=(40, 80))
     elif card == 10:
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/10H.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/10H.png"), size=(40, 80))
     elif card == 'J':
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/JH.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/JH.png"), size=(40, 80))
     elif card == 'Q':
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/QH.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/QH.png"), size=(40, 80))
     elif card == 'K':
         #Import the needed images
-        card_image = ImageTk.PhotoImage(Image.open("card_images/KH.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/KH.png"), size=(40, 80))
 
     #If the card is not found, return the back of card image. When desired, input the card as 0
     else:
-        card_image = ImageTk.PhotoImage(Image.open("card_images/gray_back.png").resize((40,80)))
+        card_image = customtkinter.CTkImage(light_image=Image.open("card_images/gray_back.png"), size=(40, 80))
 
 
 
